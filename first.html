@@ -25,6 +25,24 @@
         .table-bordered td {
             border: 1px solid #000; /* Darker borders for table cells */
         }
+        /* Add an arrow to the beginning of the accordion */
+.accordion-button::before {
+    content: '\25BC'; /* Down arrow (initial state) */
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Remove the default arrow from the right */
+.accordion-button::after {
+    display: none;
+}
+
+/* Rotate the arrow when the accordion is collapsed */
+.accordion-button.collapsed::before {
+    transform: rotate(-90deg); /* Arrow points to the right when collapsed */
+}
+
     </style>
 </head>
 <body>
