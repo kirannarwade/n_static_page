@@ -40,6 +40,11 @@
     display: none;
 }
 
+/* Remove the custom arrow completely */
+.accordion-button::before {
+    content: none; /* Remove the custom arrow */
+}
+
 /* Rotate the arrow when the accordion is collapsed */
 .accordion-button.collapsed::before {
     transform: rotate(-90deg); /* Arrow points to the right when collapsed */

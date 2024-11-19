@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Accordion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .accordion-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: #004085;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .accordion-header:hover {
+            background-color: #0056b3;
+        }
+
+        .accordion-header .arrow {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 15px;
+            background-color: #f8f9fa;
+        }
+
+        .accordion-content.open {
+            max-height: 500px; /* Set a value large enough for the content */
+        }
+
+        .accordion-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .accordion-content th, .accordion-content td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .accordion-content th {
+            background-color: #ddd;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .icon-btn:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion-container">
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Alerts
+                <span class="arrow">▶</span>
+            </div>
+            <div class="accordion-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Last Updated</th>
+                            <th>Download</th>
+                            <th>Archive</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logics and thresholds of each alert</td>
+                            <td>26-08-2024</td>
+                            <td><button class="icon-btn">⬇️</button></td>
+                            <td><button class="icon-btn">💾</button></td>
+                        </tr>
+                        <tr>
+                            <td>SOP for processing alerts</td>
+                            <td>25-07-2024</td>
+                            <td><button class="icon-btn">⬇️</button></td>
+                            <td><button class="icon-btn">💾</button></td>
+                        </tr>
+                        <tr>
+                            <td>Logics for continuous market monitoring</td>
+                            <td>24-06-2024</td>
+                            <td><button class="icon-btn">⬇️</button></td>
+                            <td><button class="icon-btn">💾</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Investigation / Examination
+                <span class="arrow">▶</span>
+            </div>
+            <div class="accordion-content">
+                <p>Additional content for Investigation/Examination goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Select all accordion headers
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                // Toggle active state for the header
+                header.classList.toggle('active');
+
+                // Toggle the visibility of the associated content
+                const content = header.nextElementSibling;
+                if (content.classList.contains('open')) {
+                    content.classList.remove('open');
+                } else {
+                    document.querySelectorAll('.accordion-content').forEach(item => item.classList.remove('open'));
+                    content.classList.add('open');
+                }
+
+                // Rotate the arrow
+                header.querySelector('.arrow').classList.toggle('rotate');
+            });
+        });
+    </script>
+</body>
+</html>
