@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap 3 JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <style>
+        .panel-group{
+            margin: 20px;
+        }
+        .panel-heading{
+            background-color: white;
+            color: black;
+            text-align: left;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 1rem;
+        }
+        .panel-heading a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .panel-heading a:hover{
+            text-decoration: none;
+            color: white;
+        }
+        .panel-body{
+            background-color: white;
+        }
+        .table{
+            margin-bottom: 0;
+        }
+    </style>
+
+
+    <div class="container mt-3">
+        <div class="header">
+            <h4>Static Data</h4>
+        </div>
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" href="#alerts">
+                    Alerts
+                </div>
+                <div class="panel-body">
+                    <div id="alerts" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Last Updated on</th>
+                                        <th>Download</th>
+                                        <th>Archieve</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Logics and ksn</td>
+                                        <td>Logics and ksn</td>
+                                        <td>Logics and ksn</td>
+                                        <td>Logics and ksn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" href="#penalty">
+                    Penalty
+                </div>
+                <div class="panel-body">
+                    <div id="penalty" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Last Updated on</th>
+                                        <th>Download</th>
+                                        <th>Archieve</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Logics and ksn</td>
+                                        <td>Logics and ksn</td>
+                                        <td>Logics and ksn</td>
+                                        <td>Logics and ksn</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
